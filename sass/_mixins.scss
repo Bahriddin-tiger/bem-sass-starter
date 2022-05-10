@@ -1,0 +1,21 @@
+@mixin list-global{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+@mixin flex-starter{
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+}
+
+@mixin link-global{
+    display: inline-block;
+    text-decoration: none;
+}
+
+@mixin title-text-global{
+    margin: 0;
+    padding: 0;
+}
