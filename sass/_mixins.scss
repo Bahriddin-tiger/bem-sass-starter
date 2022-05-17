@@ -1,21 +1,57 @@
-@mixin list-global{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+@mixin list-global {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
 }
 
-@mixin flex-starter{
-    display: flex;
-    align-items: center;
-    // justify-content: space-between;
+@mixin flex-starter {
+	display: flex;
+	align-items: center;
+	// justify-content: space-between;
 }
 
-@mixin link-global{
-    display: inline-block;
-    text-decoration: none;
+@mixin link-global {
+	display: inline-block;
+	text-decoration: none;
 }
 
-@mixin title-text-global{
-    margin: 0;
-    padding: 0;
+@mixin title-text-global {
+	margin: 0;
+	padding: 0;
+}
+
+@mixin triangle(
+	$widh: 15px,
+	$color: red,
+	$top-left: false,
+	$top-right: false,
+	$bottom-left: false,
+	$bottom-right: false
+) {
+	position: absolute;
+	display: inline-block;
+
+	border-right: $widh solid transparent;
+	border-left: $widh solid transparent;
+	transform: translateX(50%);
+
+	@if ($top-left) {
+		border-top: $widh solid $color;
+		top: 0;
+		left: 0;
+		transform: translateX(-50%);
+	} @else if($top-right) {
+		border-top: $widh solid $color;
+		top: 0;
+		right: 0;
+	} @else if($bottom-left) {
+		border-bottom: $widh solid $color;
+		bottom: 0;
+		left: 0;
+		transform: translateX(-50%);
+	} @else if($bottom-right) {
+		border-bottom: $widh solid $color;
+		top: 0;
+		right: 0;
+	}
 }
